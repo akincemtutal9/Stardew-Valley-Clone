@@ -1506,7 +1506,7 @@ MonoBehaviour:
   animator: {fileID: 95000010530816694}
   rb: {fileID: 6279687917543897295}
   moveSpeed: 5
-  crossfadeDuration: 0.2
+  crossFadeDuration: 0
 --- !u!95 &95000010530816694
 Animator:
   serializedVersion: 4
