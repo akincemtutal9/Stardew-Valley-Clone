@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using GameAssets.Scripts.Economy;
+using UnityEditor;
 using UnityEngine;
 
 namespace GameAssets.Scripts.Clothing
@@ -36,13 +38,16 @@ namespace GameAssets.Scripts.Clothing
             UpdateVisual();
         }
 
-        public void SellItemFromInventory()
+        protected void SellItemFromInventory()
         {
             options.Remove(options[currentOption]);
             if (currentOption >= options.Count)
             {
                 currentOption = options.Count - 1;
             }
+
+            MoneySystem.instance.AddMoney(options[currentOption].itemPrice);
+            
             UpdateVisual();
         }
 

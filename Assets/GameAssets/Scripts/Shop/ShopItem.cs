@@ -1,4 +1,5 @@
 using GameAssets.Scripts.Clothing;
+using GameAssets.Scripts.Economy;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,6 +35,17 @@ namespace GameAssets.Scripts.Shop
         // Inventory için FindObjectOfType atılabilir
         public void BuyItem()
         {
+            if (MoneySystem.instance.balance < item.itemPrice)
+            {
+                Debug.Log("Fakir piç");
+                return;
+            }
+            else
+            {
+                MoneySystem.instance.SubtractMoney(item.itemPrice);
+            }
+            
+            
             if (inventory.options == null)
             {
                 inventory.options.Add(item);
