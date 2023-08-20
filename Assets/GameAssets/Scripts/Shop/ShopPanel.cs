@@ -1,57 +1,53 @@
 using System.Collections.Generic;
-using GameAssets.Scripts.Clothing;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace GameAssets.Scripts.Shop
 {
     public class ShopPanel : MonoBehaviour
     {
-        [Header("UI Elements")]
-        public TMP_Text itemNameText;
-        public TMP_Text itemPriceText;
-        public Image itemSpriteImage;
-        public Button buyButton;
+        [SerializeField] private List<GameObject> panelList = new List<GameObject>();
 
-        public OutfitInventory inventory;
-        
-        
-        [Header("Items for Sale")]
-        public List<Item> itemsForSale;
+        private int currentOption = 0;
 
-        private int currentItemIndex = 0;
-
-        private void Start()
+        private void OnEnable()
         {
-            UpdateUIWithCurrentItem();
+            // Activate the indexed object and deactivate all others
+            for (int i = 0; i < panelList.Count; i++)
+            {
+                panelList[i].SetActive(i == currentOption);
+            }
         }
 
-        public void BuyCurrentItem()
+        public void ShowNextShopList()
         {
-            if (currentItemIndex < itemsForSale.Count)
-            { 
-                inventory.options.Add(itemsForSale[currentItemIndex]);
-                currentItemIndex++;
-                UpdateUIWithCurrentItem();
+            // Deactivate the currently displayed object
+            panelList[currentOption].SetActive(false);
+
+            // Move to the next option
+            currentOption++;
+            if (currentOption >= panelList.Count)
+            {
+                currentOption = 0;
             }
+
+            // Activate the new indexed object
+            panelList[currentOption].SetActive(true);
         }
-        private void UpdateUIWithCurrentItem()
+
+        public void ShowPreviousShopList()
         {
-            if (currentItemIndex < itemsForSale.Count)
+            // Deactivate the currently displayed object
+            panelList[currentOption].SetActive(false);
+
+            // Move to the previous option
+            currentOption--;
+            if (currentOption < 0)
             {
-                Item currentItem = itemsForSale[currentItemIndex];
-                itemNameText.text = currentItem.itemName;
-                itemPriceText.text = "0"; 
-                itemSpriteImage.sprite = currentItem.itemSprite;
+                currentOption = panelList.Count - 1;
             }
-            else
-            {
-                
-                itemNameText.text = "";
-                itemPriceText.text = "";
-                itemSpriteImage.sprite = null;
-            }
+
+            // Activate the new indexed object
+            panelList[currentOption].SetActive(true);
         }
     }
 }
