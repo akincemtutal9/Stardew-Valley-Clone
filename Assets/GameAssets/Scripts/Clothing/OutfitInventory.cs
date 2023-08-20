@@ -13,6 +13,8 @@ namespace GameAssets.Scripts.Clothing
 
         private int currentOption = 0;
 
+        public int CurrentOption => currentOption;
+
         public void NextOption()
         {
             currentOption++;

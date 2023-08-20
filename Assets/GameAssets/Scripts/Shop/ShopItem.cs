@@ -15,7 +15,7 @@ namespace GameAssets.Scripts.Shop
         public Button buyButton;
         public OutfitInventory inventory;
 
-        private void Start()
+        private void OnEnable()
         {
             itemNameText.text = item.itemName;
             itemPriceText.text = item.itemPrice.ToString();
