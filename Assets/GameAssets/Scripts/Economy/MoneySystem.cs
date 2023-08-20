@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 namespace GameAssets.Scripts.Economy
-{
+{ 
     public class MoneySystem : MonoBehaviour
     {
+        [SerializeField] private TMP_Text balanceText;
         public static MoneySystem instance; // Public instance for easy access
         public int balance = 0;
 
@@ -20,11 +22,17 @@ namespace GameAssets.Scripts.Economy
             }
         }
 
+        private void Start()
+        {
+            balanceText.text = "balance = " + balance;
+        }
+        
         public void AddMoney(int amount)
         {
             if (amount > 0)
             {
                 balance += amount;
+                balanceText.text = "balance = " + balance;
                 Debug.Log($"Added {amount} to the balance. New balance: {balance}");
             }
             else
@@ -40,6 +48,7 @@ namespace GameAssets.Scripts.Economy
                 if (balance >= amount)
                 {
                     balance -= amount;
+                    balanceText.text = "balance = " + balance;
                     Debug.Log($"Subtracted {amount} from the balance. New balance: {balance}");
                 }
                 else

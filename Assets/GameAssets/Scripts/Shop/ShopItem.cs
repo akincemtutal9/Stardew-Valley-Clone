@@ -32,12 +32,10 @@ namespace GameAssets.Scripts.Shop
             }
 
         }
-        // Inventory için FindObjectOfType atılabilir
         public void BuyItem()
         {
             if (MoneySystem.instance.balance < item.itemPrice)
             {
-                Debug.Log("Fakir piç");
                 return;
             }
             else
