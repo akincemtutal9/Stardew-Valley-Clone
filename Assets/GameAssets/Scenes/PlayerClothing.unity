@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 23407392}
-  - component: {fileID: 23407394}
   m_Layer: 5
   m_Name: TorsoInventory
   m_TagString: Untagged
@@ -164,22 +163,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &23407394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23407391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94c4a41370e071d4287b8aa1aa3b79c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodyPart: {fileID: 212000013019813962}
-  options:
-  - {fileID: 11400000, guid: d81f6626b8295d142ae97d527a95e266, type: 2}
-  currentTorsoImage: {fileID: 329594906}
 --- !u!1 &54655247
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +928,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 922495806}
+      - m_Target: {fileID: 1272546087}
         m_TargetAssemblyTypeName: GameAssets.Scripts.Clothing.HoodInventory, Assembly-CSharp
         m_MethodName: PreviousItemAndRefreshImage
         m_Mode: 1
@@ -1168,13 +1151,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323653033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.65429, y: -1.0440788, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 2126481114}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &329594904
 GameObject:
@@ -1374,7 +1357,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &529760900
 MonoBehaviour:
@@ -1549,7 +1532,7 @@ MonoBehaviour:
   itemPriceText: {fileID: 1083234645}
   itemSpriteImage: {fileID: 547974775}
   buyButton: {fileID: 1328067559}
-  inventory: {fileID: 922495806}
+  inventory: {fileID: 0}
 --- !u!1 &675486670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +1845,7 @@ MonoBehaviour:
   itemPriceText: {fileID: 54655248}
   itemSpriteImage: {fileID: 195389500}
   buyButton: {fileID: 1292600651}
-  inventory: {fileID: 23407394}
+  inventory: {fileID: 0}
 --- !u!1 &740366231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,6 +2116,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751407900}
   m_CullTransparentMesh: 1
+--- !u!1 &760922583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760922584}
+  - component: {fileID: 760922585}
+  m_Layer: 0
+  m_Name: TorsoInventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &760922584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760922583}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2126481114}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &760922585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760922583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c4a41370e071d4287b8aa1aa3b79c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPart: {fileID: 212000013019813962}
+  options:
+  - {fileID: 11400000, guid: d81f6626b8295d142ae97d527a95e266, type: 2}
+  currentTorsoImage: {fileID: 329594906}
 --- !u!1 &777977770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,7 +2246,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778223976
 GameObject:
@@ -2679,7 +2710,7 @@ MonoBehaviour:
   itemPriceText: {fileID: 278430125}
   itemSpriteImage: {fileID: 1036439367}
   buyButton: {fileID: 115450487}
-  inventory: {fileID: 23407394}
+  inventory: {fileID: 0}
 --- !u!1 &922495803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,7 +2720,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 922495804}
-  - component: {fileID: 922495806}
   m_Layer: 5
   m_Name: HoodInventory
   m_TagString: Untagged
@@ -2721,22 +2751,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 333}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &922495806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922495803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c28ec512c73fe43805c4527aa5aa70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodyPart: {fileID: 212000009840258642}
-  options:
-  - {fileID: 11400000, guid: c5052598c614a48419116890d354a681, type: 2}
-  currentHoodImage: {fileID: 1089695228}
 --- !u!1 &999297422
 GameObject:
   m_ObjectHideFlags: 0
@@ -3238,7 +3252,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1066467013
 MonoBehaviour:
@@ -3498,7 +3512,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 23407394}
+      - m_Target: {fileID: 760922585}
         m_TargetAssemblyTypeName: GameAssets.Scripts.Clothing.TorsoInventory, Assembly-CSharp
         m_MethodName: NextItemAndRefreshImage
         m_Mode: 1
@@ -3979,6 +3993,54 @@ MonoBehaviour:
     - Hello there!
     - I'm shopguy choose clothes
     - Dimi leeen
+--- !u!1 &1272546086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1272546088}
+  - component: {fileID: 1272546087}
+  m_Layer: 0
+  m_Name: HoodInventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1272546087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272546086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c28ec512c73fe43805c4527aa5aa70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPart: {fileID: 212000009840258642}
+  options:
+  - {fileID: 11400000, guid: c5052598c614a48419116890d354a681, type: 2}
+  currentHoodImage: {fileID: 1089695228}
+--- !u!4 &1272546088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272546086}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2126481114}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1292600649
 GameObject:
   m_ObjectHideFlags: 0
@@ -4601,7 +4663,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1383373991
 BoxCollider2D:
@@ -5745,7 +5807,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 922495806}
+      - m_Target: {fileID: 1272546087}
         m_TargetAssemblyTypeName: GameAssets.Scripts.Clothing.HoodInventory, Assembly-CSharp
         m_MethodName: NextItemAndRefreshImage
         m_Mode: 1
@@ -6353,7 +6415,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 23407394}
+      - m_Target: {fileID: 760922585}
         m_TargetAssemblyTypeName: GameAssets.Scripts.Clothing.TorsoInventory, Assembly-CSharp
         m_MethodName: PreviousItemAndRefreshImage
         m_Mode: 1
@@ -6672,6 +6734,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113681026}
   m_CullTransparentMesh: 1
+--- !u!1 &2126481113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2126481114}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2126481114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126481113}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.65429, y: 1.0440788, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 323653035}
+  - {fileID: 1272546088}
+  - {fileID: 760922584}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2136814145
 GameObject:
   m_ObjectHideFlags: 0
@@ -6893,7 +6989,7 @@ PrefabInstance:
     - target: {fileID: 7715560756942703013, guid: be5263d7f45370b44a61f0bdab9d4864, type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 922495806}
+      objectReference: {fileID: 0}
     - target: {fileID: 7715560756942703018, guid: be5263d7f45370b44a61f0bdab9d4864, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
