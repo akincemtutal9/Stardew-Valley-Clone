@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameAssets.Scripts
+namespace GameAssets.Scripts.Clothing
 {
-    public class OutfitChanger : MonoBehaviour
+    public class OutfitInventory : MonoBehaviour
     {
         [Header("Sprite To Changer")] 
         public SpriteRenderer bodyPart;
 
         [Header("Sprite to Cycle Through")]
-        public List<Sprite> options = new List<Sprite>();
+        public List<Item> options = new List<Item>();
 
         private int currentOption = 0;
 
@@ -21,7 +21,7 @@ namespace GameAssets.Scripts
                 currentOption = 0;
             }
 
-            bodyPart.sprite = options[currentOption];
+            bodyPart.sprite = options[currentOption].itemSprite;
         }
 
         public void PreviousOption()
@@ -31,7 +31,7 @@ namespace GameAssets.Scripts
             {
                 currentOption = options.Count - 1;
             }
-            bodyPart.sprite = options[currentOption];
+            bodyPart.sprite = options[currentOption].itemSprite;
         }
     }
 }

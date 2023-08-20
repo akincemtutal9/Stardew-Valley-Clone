@@ -1,27 +1,27 @@
 using UnityEngine;
 
-namespace GameAssets.Scripts.Dialogue
+namespace GameAssets.Scripts.Utils
 {
-    public class DialogueCollider : MonoBehaviour
+    public class CanvasCollider : MonoBehaviour
     {
         private const string Player = nameof(Player);
-        [SerializeField] private GameObject dialogCanvas;
+        [SerializeField] private GameObject canvas;
         private void Start()
         {
-            dialogCanvas.SetActive(false);
+            canvas.SetActive(false);
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag(Player))
             {
-                dialogCanvas.SetActive(true);
+                canvas.SetActive(true);
             }
         }
         private void OnTriggerExit2D(Collider2D other)
         {
             if (other.gameObject.CompareTag(Player))
             {
-                dialogCanvas.SetActive(false);
+                canvas.SetActive(false);
             }
         }
     }

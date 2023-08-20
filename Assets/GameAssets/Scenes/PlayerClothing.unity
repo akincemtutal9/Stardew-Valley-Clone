@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 23407392}
   - component: {fileID: 23407393}
+  - component: {fileID: 23407394}
   m_Layer: 5
   m_Name: TorsoSelector
   m_TagString: Untagged
@@ -177,12 +178,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 212000013019813962}
   options:
-  - {fileID: 21300000, guid: 215dd6c48c732d744aecd29e7fecbbfa, type: 3}
-  - {fileID: 21300000, guid: 90458a12b047bb84ba77cb7ea81ba457, type: 3}
-  - {fileID: 21300000, guid: 124013dbba7f284489ac16156c930131, type: 3}
-  - {fileID: 21300000, guid: 3d9056df586b6024fbc5b9fee2433eef, type: 3}
-  - {fileID: 21300000, guid: fff248787aa9dc44d819b77a6686c0af, type: 3}
-  - {fileID: 21300000, guid: 250530d3e9754ed418009e3d539275b3, type: 3}
+  - {fileID: 11400000, guid: d81f6626b8295d142ae97d527a95e266, type: 2}
+  - {fileID: 11400000, guid: 1edb58915292e1f48921649807241121, type: 2}
+  - {fileID: 11400000, guid: 52deb98251949de42ad18219ca2b00c9, type: 2}
+--- !u!114 &23407394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23407391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48a220b08dfe6a4abb906d635f245eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPart: {fileID: 0}
+  options: []
 --- !u!1 &202751675
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +384,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 922495805}
-        m_TargetAssemblyTypeName: GameAssets.Scripts.OutfitChanger, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameAssets.Scripts.Clothing.OutfitInventory, Assembly-CSharp
         m_MethodName: PreviousOption
         m_Mode: 1
         m_Arguments:
@@ -477,8 +489,10 @@ GameObject:
   m_Component:
   - component: {fileID: 529760899}
   - component: {fileID: 529760898}
+  - component: {fileID: 529760901}
+  - component: {fileID: 529760900}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: InventoryCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,7 +540,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -551,6 +565,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &529760900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529760897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529a9f457ab5df44f9f414ee98708489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1937403781}
+--- !u!61 &529760901
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529760897}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &675486670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,11 +1266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPart: {fileID: 212000009840258642}
   options:
-  - {fileID: 21300000, guid: 468244f274f38f64b85773c7888444b6, type: 3}
-  - {fileID: 21300000, guid: f7e7bed775fff8347b9e53c67e20875f, type: 3}
-  - {fileID: 21300000, guid: ae2d3e3bacfacde4981510b116293dba, type: 3}
-  - {fileID: 21300000, guid: dcb72940063c94f44abc2366768e713a, type: 3}
-  - {fileID: 21300000, guid: 20eb058aea3c3a744bb5d47a1610550a, type: 3}
+  - {fileID: 11400000, guid: c5052598c614a48419116890d354a681, type: 2}
+  - {fileID: 11400000, guid: 4d88beaef6a156342a470613f2229f7c, type: 2}
+  - {fileID: 11400000, guid: f686961aee46d2746bd5d354ea98ea96, type: 2}
 --- !u!1 &1000109750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,7 +1623,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1235345740
 GameObject:
@@ -2121,7 +2172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529a9f457ab5df44f9f414ee98708489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogCanvas: {fileID: 202751675}
+  canvas: {fileID: 202751675}
 --- !u!1 &1461898685
 GameObject:
   m_ObjectHideFlags: 3
@@ -2777,7 +2828,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 922495805}
-        m_TargetAssemblyTypeName: GameAssets.Scripts.OutfitChanger, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameAssets.Scripts.Clothing.OutfitInventory, Assembly-CSharp
         m_MethodName: NextOption
         m_Mode: 1
         m_Arguments:
@@ -2981,7 +3032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1937403782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3057,7 +3108,7 @@ RectTransform:
   m_Children:
   - {fileID: 1529118325}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
