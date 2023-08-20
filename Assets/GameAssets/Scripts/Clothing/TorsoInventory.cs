@@ -27,10 +27,22 @@ namespace GameAssets.Scripts.Clothing
             RefreshImage();
         }
 
+        public void OnSellItem()
+        {
+            SellItemFromInventory();
+            RefreshImage();
+        }
+
         private void RefreshImage()
         {
-            currentTorsoImage.sprite = options[CurrentOption].itemSprite;
+            if (options.Count > 0)
+            {
+                currentTorsoImage.sprite = options[CurrentOption].itemSprite;
+            }
+            else
+            {
+                currentTorsoImage.sprite = null;
+            }
         }
-        
     }
 }

@@ -22,8 +22,7 @@ namespace GameAssets.Scripts.Clothing
             {
                 currentOption = 0;
             }
-
-            bodyPart.sprite = options[currentOption].itemSprite;
+            UpdateVisual();
         }
 
         public void PreviousOption()
@@ -33,7 +32,32 @@ namespace GameAssets.Scripts.Clothing
             {
                 currentOption = options.Count - 1;
             }
-            bodyPart.sprite = options[currentOption].itemSprite;
+
+            UpdateVisual();
         }
+
+        public void SellItemFromInventory()
+        {
+            options.Remove(options[currentOption]);
+            if (currentOption >= options.Count)
+            {
+                currentOption = options.Count - 1;
+            }
+            UpdateVisual();
+        }
+
+        private void UpdateVisual()
+        {
+            if (options.Count > 0)
+            {
+                bodyPart.sprite = options[currentOption].itemSprite;
+            }
+            else
+            {
+                bodyPart.sprite = null;
+            }
+        }
+        
+        
     }
 }

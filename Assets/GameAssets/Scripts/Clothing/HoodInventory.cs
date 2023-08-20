@@ -28,9 +28,22 @@ namespace GameAssets.Scripts.Clothing
             RefreshImage();
         }
 
+        public void OnSellItem()
+        {
+            SellItemFromInventory();
+            RefreshImage();
+        }
+
         private void RefreshImage()
         {
-            currentHoodImage.sprite = options[CurrentOption].itemSprite;
+            if (options.Count > 0)
+            {
+                currentHoodImage.sprite = options[CurrentOption].itemSprite;
+            }
+            else
+            {
+                currentHoodImage.sprite = null;
+            }
         }
     }
 }

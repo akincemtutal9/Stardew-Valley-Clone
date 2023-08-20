@@ -38,9 +38,6 @@ namespace GameAssets.Scripts.Shop
             inventory.options.Add(item);
         }
 
-        public void SellItem()
-        {
-            inventory.options.Remove(item);
-        }
+        
     }
 }
