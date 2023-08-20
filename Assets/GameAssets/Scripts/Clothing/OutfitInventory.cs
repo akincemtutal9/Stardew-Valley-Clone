@@ -40,6 +40,12 @@ namespace GameAssets.Scripts.Clothing
 
         protected void SellItemFromInventory()
         {
+            // I initially set one clothing on player thats why
+            if (options.Count == 1)
+            {
+                return;
+            }
+        
             options.Remove(options[currentOption]);
             if (currentOption >= options.Count)
             {
