@@ -29,15 +29,34 @@ namespace GameAssets.Scripts.Shop
             {
                 inventory = FindObjectOfType<TorsoInventory>();
             }
-            
+
         }
-        
         // Inventory için FindObjectOfType atılabilir
         public void BuyItem()
         {
-            inventory.options.Add(item);
+            if (inventory.options == null)
+            {
+                inventory.options.Add(item);
+            }
+
+            bool itemAlreadyExists = false;
+
+            // Daha önce eklenmiş mi kontrol et
+            foreach (var existingItem in inventory.options)
+            {
+                if (existingItem.itemName == item.itemName)
+                {
+                    itemAlreadyExists = true;
+                    Debug.Log("Already exist: " + item.itemName);
+                    break;
+                }
+            }
+
+            if (!itemAlreadyExists)
+            {
+                inventory.options.Add(item);
+            }
         }
 
-        
     }
 }
